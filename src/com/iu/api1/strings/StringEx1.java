@@ -8,8 +8,7 @@ public class StringEx1 {
 	int idx = 0;
 
 	
-	
-	
+//	ddd
 	
 	
 	
