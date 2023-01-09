@@ -6,13 +6,28 @@ public class StringToken1 {
 
 	public static void main(String[] args) {
 		String nations = "Korea,서울,USA,워싱턴,UK,런던,Japan,도쿄";
+		String [] n = nations.split(",");
+		//단일분할은 split, 복합분할은 StringTokenizer
 		
+		for(int i = 0; i<n.length;i++) {
+			NationDTO nationDTO = new NationDTO();
+			nationDTO.setName(n[i]);
+			nationDTO.setCity(n[++i]);
+		}
+	
 		
 		StringTokenizer st = new StringTokenizer(nations,",");
 		
 		while(st.hasMoreTokens()) {
+			NationDTO nationDTO = new NationDTO();
 			String t1 = st.nextToken();
+			nationDTO.setName(t1);
+			
 			System.out.println(t1);
+			String t2 = st.nextToken();
+			nationDTO.setCity(t2);
+			
+		
 		}
 		
 		
