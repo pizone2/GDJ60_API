@@ -18,6 +18,11 @@ public class StudentDAO {
 		sb.append("sufi, 3, 89, 74, 87 ");
 		sb.append("choa, 4, 71, 25, 99 ");
 	}
+	//학생정보백업
+	public void backup() {
+		
+	}
+	
 	//학생정보삭제
 	public int removeStudent(ArrayList<StudentDTO> ar) {
 		//삭제확인용 변수
