@@ -58,6 +58,11 @@ public class StudentController {
 				}
 				
 				break;
+			case 6:
+				studentDAO.backup();
+				System.out.println("백업이 완료되었습니다.");
+				
+				
 			default:
 				check=false;
 				break;

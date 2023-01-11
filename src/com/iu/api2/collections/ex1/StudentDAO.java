@@ -1,5 +1,8 @@
 package com.iu.api2.collections.ex1;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.StringTokenizer;
@@ -19,7 +22,31 @@ public class StudentDAO {
 		sb.append("choa, 4, 71, 25, 99 ");
 	}
 	//학생정보백업
+	//현재시간을 파일명으로 해서 파일작성 / 현재시간을 밀리세컨즈로 변환해서 파일을 만들것
 	public void backup() {
+		File file = new File("C:\\fileTest", "a.txt");
+		
+		
+		
+		ArrayList<StudentDTO> ar = new ArrayList<>();
+		String ar2 = ar.toString();
+		
+		try {
+			FileWriter fw = new FileWriter(file, true);
+			fw.write(ar2);
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}
 	
