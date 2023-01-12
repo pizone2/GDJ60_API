@@ -21,8 +21,8 @@ public class ListMain3 {
 		weatherDTO.setCity("Jeju");
 		ar2.add(weatherDTO);
 		
-		weatherDTO = new WeatherDTO;
-		weatherDTO.setCity("Jeju:);
+		weatherDTO = new WeatherDTO();
+		weatherDTO.setCity("Jeju");
 		
 		for(int i = 0; i < ar2.size(); i++) {
 			System.out.println(ar2.get(i).getCity()); //DTO타입.getcity
