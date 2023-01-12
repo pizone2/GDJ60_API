@@ -59,7 +59,7 @@ public class StudentController {
 				
 				break;
 			case 6:
-				studentDAO.backup();
+				studentDAO.studentBackup(ar);
 				System.out.println("백업이 완료되었습니다.");
 				
 				
