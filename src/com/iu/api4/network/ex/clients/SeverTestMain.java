@@ -1,8 +1,7 @@
-package com.iu.api4.network;
+package com.iu.api4.network.ex.clients;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
@@ -12,13 +11,10 @@ import java.net.Socket;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Server2 {
+public class SeverTestMain {
 
 	public static void main(String[] args) {
-		//Client 접속 대기
-		//1. 점심메뉴중에서 하나를 랜덤하게 골라서 전송
-		//2. 저녁메뉴중에서 하나를 핸덤하게 골라서 전송
-		//3. 종료
+
 		ServerSocket ss = null;
 		Socket sk = null;
 		InputStream is = null;
@@ -42,52 +38,20 @@ public class Server2 {
 				is = sk.getInputStream();
 				ir = new InputStreamReader(is);
 				br = new BufferedReader(ir);
-				Random rd = new Random();
 				String msg2 = new String();
 				
-			while(true) {	
-				//네트워크로 받는것은 모두 String타입 // 네트워크는 여러가지의 언어를 사용하기 때문에 
-				String msg = br.readLine();
-				System.out.println("Cilent : "+msg);
-				if(msg == "1") {
-					int lc = rd.nextInt(4)+1;
-						if(lc == 1) {
-							msg2 = "스시";
-						}else if(lc == 2){
-							msg2 = "신라면";
-						}else {
-							msg2 = "닭가슴살";
-						}
-				}else if(msg == "2") {
-					int lc = rd.nextInt(4)+1;
-					if(lc == 1) {
-						msg2 = "스테이크";
-					}else if(lc == 2){
-						msg2 = "수원왕갈비통닭";
-					}else {
-						msg2 = "가장맛있는족발";
-					}
-				}else {
-					System.out.println("서버 프로그램을 종료 합니다.");
-					break;
-				}
+				msg2 = br.readLine();
+				System.out.println("Cilent : "+msg2);
 			//////////////////////////////////////////////////
 				 os = sk.getOutputStream();
 				 ow = new OutputStreamWriter(os);
 				 bw = new BufferedWriter(ow);
 				
-				bw.write(msg2+"\r\n");
+				 String msg = new String();
+				 msg = "김진일-1-34-23-42-김진이-1-34-23-42-김진삼-1-34-23-42-";
+			
+				bw.write(msg+"\r\n");
 				bw.flush();
-				
-				if(msg == "3") {
-					break;
-						
-				}
-				
-				
-				
-			}
-				
 				
 				
 				
@@ -112,6 +76,9 @@ public class Server2 {
 					
 				}
 			
+		
+		
+		
 		
 		
 		
